@@ -1,0 +1,1357 @@
+{
+    "collection": {
+        "info": {
+            "_postman_id": "df791b61-11df-40db-af7b-623bb3fc665c",
+            "name": "Employee Scheduler API",
+            "description": "Complete API collection for Employee Daily Scheduler backend",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+            "updatedAt": "2025-08-24T17:17:59.000Z",
+            "createdAt": "2025-08-24T16:14:14.000Z",
+            "lastUpdatedBy": "14129669",
+            "uid": "14129669-df791b61-11df-40db-af7b-623bb3fc665c"
+        },
+        "item": [
+            {
+                "name": "Authentication",
+                "item": [
+                    {
+                        "name": "Register",
+                        "id": "697442a9-bc70-4bf8-a939-0c7e09eaf0d8",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "POST",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"email\": \"john.doe@example.com\",\n  \"password\": \"password123\",\n  \"role\": \"employee\",\n  \"department\": \"IT\",\n  \"location\": \"Main Office\",\n  \"skills\": [\"JavaScript\", \"Node.js\"],\n  \"hireDate\": \"2024-01-15\"\n}"
+                            },
+                            "url": {
+                                "raw": "{{baseUrl}}/api/auth/register",
+                                "host": [
+                                    "{{baseUrl}}"
+                                ],
+                                "path": [
+                                    "api",
+                                    "auth",
+                                    "register"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "14129669-697442a9-bc70-4bf8-a939-0c7e09eaf0d8"
+                    },
+                    {
+                        "name": "Login",
+                        "id": "87ad2fc8-6afd-4d66-98e8-2210d5a8ffb3",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "POST",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\n  \"email\": \"john.doe@example.com\",\n  \"password\": \"password123\"\n}"
+                            },
+                            "url": {
+                                "raw": "{{baseUrl}}/api/auth/login",
+                                "host": [
+                                    "{{baseUrl}}"
+                                ],
+                                "path": [
+                                    "api",
+                                    "auth",
+                                    "login"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "14129669-87ad2fc8-6afd-4d66-98e8-2210d5a8ffb3"
+                    },
+                    {
+                        "name": "Get Profile",
+                        "id": "f4dc2fd7-4f66-48d0-b5b0-f96468dc68f3",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "GET",
+                            "header": [],
+                            "url": {
+                                "raw": "{{baseUrl}}/api/auth/profile",
+                                "host": [
+                                    "{{baseUrl}}"
+                                ],
+                                "path": [
+                                    "api",
+                                    "auth",
+                                    "profile"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "14129669-f4dc2fd7-4f66-48d0-b5b0-f96468dc68f3"
+                    },
+                    {
+                        "name": "Update Profile",
+                        "id": "ba948e3b-454a-4fd7-9c60-446ff254350c",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "PUT",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\n  \"firstName\": \"John Updated\",\n  \"lastName\": \"Doe Updated\",\n  \"department\": \"Engineering\"\n}"
+                            },
+                            "url": {
+                                "raw": "{{baseUrl}}/api/auth/profile",
+                                "host": [
+                                    "{{baseUrl}}"
+                                ],
+                                "path": [
+                                    "api",
+                                    "auth",
+                                    "profile"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "14129669-ba948e3b-454a-4fd7-9c60-446ff254350c"
+                    },
+                    {
+                        "name": "Change Password",
+                        "id": "8566c99c-ca5e-48c3-9b3f-efe75c9fe979",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "PUT",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\n  \"currentPassword\": \"password123\",\n  \"newPassword\": \"newpassword123\"\n}"
+                            },
+                            "url": {
+                                "raw": "{{baseUrl}}/api/auth/change-password",
+                                "host": [
+                                    "{{baseUrl}}"
+                                ],
+                                "path": [
+                                    "api",
+                                    "auth",
+                                    "change-password"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "14129669-8566c99c-ca5e-48c3-9b3f-efe75c9fe979"
+                    },
+                    {
+                        "name": "Refresh Token",
+                        "id": "7b7d8acb-d1c8-433b-a3e4-90e5c72af900",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "POST",
+                            "header": [],
+                            "url": {
+                                "raw": "{{baseUrl}}/api/auth/refresh",
+                                "host": [
+                                    "{{baseUrl}}"
+                                ],
+                                "path": [
+                                    "api",
+                                    "auth",
+                                    "refresh"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "14129669-7b7d8acb-d1c8-433b-a3e4-90e5c72af900"
+                    },
+                    {
+                        "name": "Logout",
+                        "id": "afbe3c9d-4e25-427e-9258-7afb578fedb5",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "POST",
+                            "header": [],
+                            "url": {
+                                "raw": "{{baseUrl}}/api/auth/logout",
+                                "host": [
+                                    "{{baseUrl}}"
+                                ],
+                                "path": [
+                                    "api",
+                                    "auth",
+                                    "logout"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "14129669-afbe3c9d-4e25-427e-9258-7afb578fedb5"
+                    }
+                ],
+                "id": "1f896468-8e04-45ac-9d16-e331a48a6f58",
+                "uid": "14129669-1f896468-8e04-45ac-9d16-e331a48a6f58"
+            },
+            {
+                "name": "Employees",
+                "item": [
+                    {
+                        "name": "Get All Employees",
+                        "id": "041ed0af-6c88-4a3e-937f-584006ee22ad",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "GET",
+                            "header": [],
+                            "url": {
+                                "raw": "{{baseUrl}}/api/employees?page=1&limit=10",
+                                "host": [
+                                    "{{baseUrl}}"
+                                ],
+                                "path": [
+                                    "api",
+                                    "employees"
+                                ],
+                                "query": [
+                                    {
+                                        "key": "page",
+                                        "value": "1"
+                                    },
+                                    {
+                                        "key": "limit",
+                                        "value": "10"
+                                    }
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "14129669-041ed0af-6c88-4a3e-937f-584006ee22ad"
+                    },
+                    {
+                        "name": "Get Employee Stats",
+                        "id": "4804c046-8a30-496e-9463-1d650e97825c",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "GET",
+                            "header": [],
+                            "url": {
+                                "raw": "{{baseUrl}}/api/employees/stats",
+                                "host": [
+                                    "{{baseUrl}}"
+                                ],
+                                "path": [
+                                    "api",
+                                    "employees",
+                                    "stats"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "14129669-4804c046-8a30-496e-9463-1d650e97825c"
+                    },
+                    {
+                        "name": "Get Employees by Role and Location",
+                        "id": "5c03f261-9b90-48b0-90f9-8eabbd73f80a",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "GET",
+                            "header": [],
+                            "url": {
+                                "raw": "{{baseUrl}}/api/employees/by-role-location?role=employee&location=Main Office",
+                                "host": [
+                                    "{{baseUrl}}"
+                                ],
+                                "path": [
+                                    "api",
+                                    "employees",
+                                    "by-role-location"
+                                ],
+                                "query": [
+                                    {
+                                        "key": "role",
+                                        "value": "employee"
+                                    },
+                                    {
+                                        "key": "location",
+                                        "value": "Main Office"
+                                    }
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "14129669-5c03f261-9b90-48b0-90f9-8eabbd73f80a"
+                    },
+                    {
+                        "name": "Get Employees by Skills",
+                        "id": "bc60909c-56fb-4968-b87c-65a75424c651",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "GET",
+                            "header": [],
+                            "url": {
+                                "raw": "{{baseUrl}}/api/employees/by-skills?skills=JavaScript,Node.js",
+                                "host": [
+                                    "{{baseUrl}}"
+                                ],
+                                "path": [
+                                    "api",
+                                    "employees",
+                                    "by-skills"
+                                ],
+                                "query": [
+                                    {
+                                        "key": "skills",
+                                        "value": "JavaScript,Node.js"
+                                    }
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "14129669-bc60909c-56fb-4968-b87c-65a75424c651"
+                    },
+                    {
+                        "name": "Get Available Employees for Day",
+                        "id": "93175a0d-c543-4a16-a090-6e78a19426d6",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "GET",
+                            "header": [],
+                            "url": {
+                                "raw": "{{baseUrl}}/api/employees/available/2024-01-15",
+                                "host": [
+                                    "{{baseUrl}}"
+                                ],
+                                "path": [
+                                    "api",
+                                    "employees",
+                                    "available",
+                                    "2024-01-15"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "14129669-93175a0d-c543-4a16-a090-6e78a19426d6"
+                    },
+                    {
+                        "name": "Create Employee",
+                        "id": "e3cb4e7d-96cd-4293-875c-b45d2cd85991",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "POST",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\n  \"firstName\": \"Jane\",\n  \"lastName\": \"Smith\",\n  \"email\": \"jane.smith@example.com\",\n  \"password\": \"password123\",\n  \"role\": \"manager\",\n  \"department\": \"HR\",\n  \"location\": \"Main Office\",\n  \"skills\": [\"Leadership\", \"Communication\"],\n  \"hireDate\": \"2024-01-20\"\n}"
+                            },
+                            "url": {
+                                "raw": "{{baseUrl}}/api/employees",
+                                "host": [
+                                    "{{baseUrl}}"
+                                ],
+                                "path": [
+                                    "api",
+                                    "employees"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "14129669-e3cb4e7d-96cd-4293-875c-b45d2cd85991"
+                    },
+                    {
+                        "name": "Get Employee by ID",
+                        "id": "98f24b9d-dd1d-48c8-b2ef-137b9adfe3ba",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "GET",
+                            "header": [],
+                            "url": {
+                                "raw": "{{baseUrl}}/api/employees/64f1a2b3c4d5e6f7g8h9i0j1",
+                                "host": [
+                                    "{{baseUrl}}"
+                                ],
+                                "path": [
+                                    "api",
+                                    "employees",
+                                    "64f1a2b3c4d5e6f7g8h9i0j1"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "14129669-98f24b9d-dd1d-48c8-b2ef-137b9adfe3ba"
+                    },
+                    {
+                        "name": "Update Employee",
+                        "id": "a770c819-d806-43b4-8173-c1572ce483e9",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "PUT",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\n  \"firstName\": \"Jane Updated\",\n  \"department\": \"Human Resources\",\n  \"skills\": [\"Leadership\", \"Communication\", \"Conflict Resolution\"]\n}"
+                            },
+                            "url": {
+                                "raw": "{{baseUrl}}/api/employees/64f1a2b3c4d5e6f7g8h9i0j1",
+                                "host": [
+                                    "{{baseUrl}}"
+                                ],
+                                "path": [
+                                    "api",
+                                    "employees",
+                                    "64f1a2b3c4d5e6f7g8h9i0j1"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "14129669-a770c819-d806-43b4-8173-c1572ce483e9"
+                    },
+                    {
+                        "name": "Delete Employee",
+                        "id": "ef6ce737-56e4-47c4-8d63-e9bb77e152be",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "DELETE",
+                            "header": [],
+                            "url": {
+                                "raw": "{{baseUrl}}/api/employees/68ab3d8ff0b8a0c34bca39a1",
+                                "host": [
+                                    "{{baseUrl}}"
+                                ],
+                                "path": [
+                                    "api",
+                                    "employees",
+                                    "68ab3d8ff0b8a0c34bca39a1"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "14129669-ef6ce737-56e4-47c4-8d63-e9bb77e152be"
+                    },
+                    {
+                        "name": "Get Employee Workload",
+                        "id": "66a035a6-0196-4413-ade7-359815b4ed60",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "GET",
+                            "header": [],
+                            "url": {
+                                "raw": "{{baseUrl}}/api/employees/64f1a2b3c4d5e6f7g8h9i0j1/workload",
+                                "host": [
+                                    "{{baseUrl}}"
+                                ],
+                                "path": [
+                                    "api",
+                                    "employees",
+                                    "64f1a2b3c4d5e6f7g8h9i0j1",
+                                    "workload"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "14129669-66a035a6-0196-4413-ade7-359815b4ed60"
+                    }
+                ],
+                "id": "d89e9046-822c-4091-8ea7-8b2665528296",
+                "uid": "14129669-d89e9046-822c-4091-8ea7-8b2665528296"
+            },
+            {
+                "name": "Shifts",
+                "item": [
+                    {
+                        "name": "Get All Shifts",
+                        "id": "82275e82-86b3-427f-9860-25e501564d13",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "GET",
+                            "header": [],
+                            "url": {
+                                "raw": "{{baseUrl}}/api/shifts?page=1&limit=10&startDate=2024-01-01&endDate=2024-01-31",
+                                "host": [
+                                    "{{baseUrl}}"
+                                ],
+                                "path": [
+                                    "api",
+                                    "shifts"
+                                ],
+                                "query": [
+                                    {
+                                        "key": "page",
+                                        "value": "1"
+                                    },
+                                    {
+                                        "key": "limit",
+                                        "value": "10"
+                                    },
+                                    {
+                                        "key": "startDate",
+                                        "value": "2024-01-01"
+                                    },
+                                    {
+                                        "key": "endDate",
+                                        "value": "2024-01-31"
+                                    }
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "14129669-82275e82-86b3-427f-9860-25e501564d13"
+                    },
+                    {
+                        "name": "Get Shift by ID",
+                        "id": "678794f9-3405-47b9-8dbc-d3e43544b141",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "GET",
+                            "header": [],
+                            "url": {
+                                "raw": "{{baseUrl}}/api/shifts/68ab3eebcbc6603bfdae0c4a",
+                                "host": [
+                                    "{{baseUrl}}"
+                                ],
+                                "path": [
+                                    "api",
+                                    "shifts",
+                                    "68ab3eebcbc6603bfdae0c4a"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "14129669-678794f9-3405-47b9-8dbc-d3e43544b141"
+                    },
+                    {
+                        "name": "Get Daily Schedule",
+                        "id": "bc9e42b1-461d-4d3c-8378-bd0c78543d10",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "GET",
+                            "header": [],
+                            "url": {
+                                "raw": "{{baseUrl}}/api/shifts/daily/2024-01-15",
+                                "host": [
+                                    "{{baseUrl}}"
+                                ],
+                                "path": [
+                                    "api",
+                                    "shifts",
+                                    "daily",
+                                    "2024-01-15"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "14129669-bc9e42b1-461d-4d3c-8378-bd0c78543d10"
+                    },
+                    {
+                        "name": "Get Unassigned Shifts",
+                        "id": "9ce3a53b-1bbb-47fa-b0bb-7f0e30ddf6df",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "GET",
+                            "header": [],
+                            "url": {
+                                "raw": "{{baseUrl}}/api/shifts/unassigned",
+                                "host": [
+                                    "{{baseUrl}}"
+                                ],
+                                "path": [
+                                    "api",
+                                    "shifts",
+                                    "unassigned"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "14129669-9ce3a53b-1bbb-47fa-b0bb-7f0e30ddf6df"
+                    },
+                    {
+                        "name": "Create Shift",
+                        "id": "951abb1c-7f32-4c25-b15a-4cb7d66e230a",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "POST",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\n  \"date\": \"2024-01-15\",\n  \"startTime\": \"09:00\",\n  \"endTime\": \"17:00\",\n  \"role\": \"employee\",\n  \"location\": \"Main Office\",\n  \"requiredSkills\": [\"JavaScript\"],\n  \"maxEmployees\": 3,\n  \"description\": \"Regular work shift\"\n}"
+                            },
+                            "url": {
+                                "raw": "{{baseUrl}}/api/shifts",
+                                "host": [
+                                    "{{baseUrl}}"
+                                ],
+                                "path": [
+                                    "api",
+                                    "shifts"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "14129669-951abb1c-7f32-4c25-b15a-4cb7d66e230a"
+                    },
+                    {
+                        "name": "Update Shift",
+                        "id": "ca4b76c7-a576-451f-9b9d-6f442d04ca90",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "PUT",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\n  \"startTime\": \"10:00\",\n  \"endTime\": \"18:00\",\n  \"maxEmployees\": 4\n}"
+                            },
+                            "url": {
+                                "raw": "{{baseUrl}}/api/shifts/64f1a2b3c4d5e6f7g8h9i0j1",
+                                "host": [
+                                    "{{baseUrl}}"
+                                ],
+                                "path": [
+                                    "api",
+                                    "shifts",
+                                    "64f1a2b3c4d5e6f7g8h9i0j1"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "14129669-ca4b76c7-a576-451f-9b9d-6f442d04ca90"
+                    },
+                    {
+                        "name": "Assign Shift",
+                        "id": "cfabb0fa-83b0-4698-91f5-2f09102332a0",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "PUT",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\n  \"employeeId\": \"64f1a2b3c4d5e6f7g8h9i0j1\"\n}"
+                            },
+                            "url": {
+                                "raw": "{{baseUrl}}/api/shifts/64f1a2b3c4d5e6f7g8h9i0j1/assign",
+                                "host": [
+                                    "{{baseUrl}}"
+                                ],
+                                "path": [
+                                    "api",
+                                    "shifts",
+                                    "64f1a2b3c4d5e6f7g8h9i0j1",
+                                    "assign"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "14129669-cfabb0fa-83b0-4698-91f5-2f09102332a0"
+                    },
+                    {
+                        "name": "Delete Shift",
+                        "id": "00b11ac0-0224-4cb9-8f93-9a2ee66bddf1",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "DELETE",
+                            "header": [],
+                            "url": {
+                                "raw": "{{baseUrl}}/api/shifts/68ab3eebcbc6603bfdae0c4a",
+                                "host": [
+                                    "{{baseUrl}}"
+                                ],
+                                "path": [
+                                    "api",
+                                    "shifts",
+                                    "68ab3eebcbc6603bfdae0c4a"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "14129669-00b11ac0-0224-4cb9-8f93-9a2ee66bddf1"
+                    }
+                ],
+                "id": "37d3a19d-b6b9-4ce3-980b-8a88abe0873f",
+                "uid": "14129669-37d3a19d-b6b9-4ce3-980b-8a88abe0873f"
+            },
+            {
+                "name": "Time Off",
+                "item": [
+                    {
+                        "name": "Create Time Off Request",
+                        "id": "b61308eb-acfc-42f3-8299-24aa9095175b",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "POST",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\n  \"startDate\": \"2024-02-01\",\n  \"endDate\": \"2024-02-03\",\n  \"type\": \"vacation\",\n  \"reason\": \"Family vacation\",\n  \"notes\": \"Out of office for family trip\"\n}"
+                            },
+                            "url": {
+                                "raw": "{{baseUrl}}/api/time-off",
+                                "host": [
+                                    "{{baseUrl}}"
+                                ],
+                                "path": [
+                                    "api",
+                                    "time-off"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "14129669-b61308eb-acfc-42f3-8299-24aa9095175b"
+                    },
+                    {
+                        "name": "Get All Time Off Requests",
+                        "id": "9520e90a-3e5f-4744-8ffd-5fe5c34d4207",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "GET",
+                            "header": [],
+                            "url": {
+                                "raw": "{{baseUrl}}/api/time-off?page=1&limit=10&startDate=2024-01-01&endDate=2024-12-31",
+                                "host": [
+                                    "{{baseUrl}}"
+                                ],
+                                "path": [
+                                    "api",
+                                    "time-off"
+                                ],
+                                "query": [
+                                    {
+                                        "key": "page",
+                                        "value": "1"
+                                    },
+                                    {
+                                        "key": "limit",
+                                        "value": "10"
+                                    },
+                                    {
+                                        "key": "startDate",
+                                        "value": "2024-01-01"
+                                    },
+                                    {
+                                        "key": "endDate",
+                                        "value": "2024-12-31"
+                                    }
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "14129669-9520e90a-3e5f-4744-8ffd-5fe5c34d4207"
+                    },
+                    {
+                        "name": "Get Pending Time Off Requests",
+                        "id": "f4c551b9-670b-4221-8153-64e4ae9cf1ea",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "GET",
+                            "header": [],
+                            "url": {
+                                "raw": "{{baseUrl}}/api/time-off/pending",
+                                "host": [
+                                    "{{baseUrl}}"
+                                ],
+                                "path": [
+                                    "api",
+                                    "time-off",
+                                    "pending"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "14129669-f4c551b9-670b-4221-8153-64e4ae9cf1ea"
+                    },
+                    {
+                        "name": "Get Time Off Request by ID",
+                        "id": "eba6ed4c-dacc-47a1-a659-5ea58f2bb705",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "GET",
+                            "header": [],
+                            "url": {
+                                "raw": "{{baseUrl}}/api/time-off/64f1a2b3c4d5e6f7g8h9i0j1",
+                                "host": [
+                                    "{{baseUrl}}"
+                                ],
+                                "path": [
+                                    "api",
+                                    "time-off",
+                                    "64f1a2b3c4d5e6f7g8h9i0j1"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "14129669-eba6ed4c-dacc-47a1-a659-5ea58f2bb705"
+                    },
+                    {
+                        "name": "Update Time Off Request",
+                        "id": "40a51ed4-211f-43a3-8f36-180a670da2f9",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "PUT",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\n \"startDate\": \"2025-08-25T00:00:00.000Z\",\n            \"endDate\": \"2025-08-28T00:00:00.000Z\",\n            \"status\": \"pending\",\n            \"reason\": \"Family vacation\",\n            \"requestType\": \"personal\",\n            \"totalDays\": 4,\n            \"notes\": \"Out of office for family trip\",\n}"
+                            },
+                            "url": {
+                                "raw": "{{baseUrl}}/api/time-off/68ab4724e247fbff2c03b0ac",
+                                "host": [
+                                    "{{baseUrl}}"
+                                ],
+                                "path": [
+                                    "api",
+                                    "time-off",
+                                    "68ab4724e247fbff2c03b0ac"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "14129669-40a51ed4-211f-43a3-8f36-180a670da2f9"
+                    },
+                    {
+                        "name": "Cancel Time Off Request",
+                        "id": "da819c90-d9ae-473f-a023-36503c14c50c",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "PUT",
+                            "header": [],
+                            "url": {
+                                "raw": "{{baseUrl}}/api/time-off/64f1a2b3c4d5e6f7g8h9i0j1/cancel",
+                                "host": [
+                                    "{{baseUrl}}"
+                                ],
+                                "path": [
+                                    "api",
+                                    "time-off",
+                                    "64f1a2b3c4d5e6f7g8h9i0j1",
+                                    "cancel"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "14129669-da819c90-d9ae-473f-a023-36503c14c50c"
+                    },
+                    {
+                        "name": "Approve Time Off Request",
+                        "id": "42ddf84a-9dc0-4cb7-81fc-fc69c02c236a",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "PUT",
+                            "header": [],
+                            "url": {
+                                "raw": "{{baseUrl}}/api/time-off/64f1a2b3c4d5e6f7g8h9i0j1/approve",
+                                "host": [
+                                    "{{baseUrl}}"
+                                ],
+                                "path": [
+                                    "api",
+                                    "time-off",
+                                    "64f1a2b3c4d5e6f7g8h9i0j1",
+                                    "approve"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "14129669-42ddf84a-9dc0-4cb7-81fc-fc69c02c236a"
+                    },
+                    {
+                        "name": "Get Employee Time Off Requests",
+                        "id": "78e6e801-046e-421c-9c61-e05b81409237",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "GET",
+                            "header": [],
+                            "url": {
+                                "raw": "{{baseUrl}}/api/time-off/employee/64f1a2b3c4d5e6f7g8h9i0j1",
+                                "host": [
+                                    "{{baseUrl}}"
+                                ],
+                                "path": [
+                                    "api",
+                                    "time-off",
+                                    "employee",
+                                    "64f1a2b3c4d5e6f7g8h9i0j1"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "14129669-78e6e801-046e-421c-9c61-e05b81409237"
+                    }
+                ],
+                "id": "87363884-1834-4214-a331-6e21ae92cdab",
+                "uid": "14129669-87363884-1834-4214-a331-6e21ae92cdab"
+            },
+            {
+                "name": "Recurring Shifts",
+                "item": [
+                    {
+                        "name": "Get All Recurring Shift Templates",
+                        "id": "c93bc2e4-c678-42db-b24b-b1beef852ca5",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "GET",
+                            "header": [],
+                            "url": {
+                                "raw": "{{baseUrl}}/api/recurring-shifts",
+                                "host": [
+                                    "{{baseUrl}}"
+                                ],
+                                "path": [
+                                    "api",
+                                    "recurring-shifts"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "14129669-c93bc2e4-c678-42db-b24b-b1beef852ca5"
+                    },
+                    {
+                        "name": "Get Recurring Shift Template by ID",
+                        "id": "69afbe8f-e508-4c00-bfb8-1ebb43b6fff7",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "GET",
+                            "header": [],
+                            "url": {
+                                "raw": "{{baseUrl}}/api/recurring-shifts/64f1a2b3c4d5e6f7g8h9i0j1",
+                                "host": [
+                                    "{{baseUrl}}"
+                                ],
+                                "path": [
+                                    "api",
+                                    "recurring-shifts",
+                                    "64f1a2b3c4d5e6f7g8h9i0j1"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "14129669-69afbe8f-e508-4c00-bfb8-1ebb43b6fff7"
+                    },
+                    {
+                        "name": "Create Recurring Shift Template",
+                        "id": "848c33e0-bcad-446f-bb7f-104f31562452",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "POST",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\n  \"name\": \"Morning Shift\",\n  \"startTime\": \"09:00\",\n  \"endTime\": \"17:00\",\n  \"daysOfWeek\": [\"monday\", \"tuesday\", \"wednesday\", \"thursday\", \"friday\"],\n  \"role\": \"employee\",\n  \"location\": \"Main Office\",\n  \"requiredSkills\": [\"Basic Skills\"],\n  \"maxEmployees\": 5\n}"
+                            },
+                            "url": {
+                                "raw": "{{baseUrl}}/api/recurring-shifts",
+                                "host": [
+                                    "{{baseUrl}}"
+                                ],
+                                "path": [
+                                    "api",
+                                    "recurring-shifts"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "14129669-848c33e0-bcad-446f-bb7f-104f31562452"
+                    },
+                    {
+                        "name": "Update Recurring Shift Template",
+                        "id": "a569a91d-c480-4622-8e20-8b18a78bd64b",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "PUT",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\n  \"startTime\": \"08:00\",\n  \"endTime\": \"16:00\",\n  \"maxEmployees\": 6\n}"
+                            },
+                            "url": {
+                                "raw": "{{baseUrl}}/api/recurring-shifts/64f1a2b3c4d5e6f7g8h9i0j1",
+                                "host": [
+                                    "{{baseUrl}}"
+                                ],
+                                "path": [
+                                    "api",
+                                    "recurring-shifts",
+                                    "64f1a2b3c4d5e6f7g8h9i0j1"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "14129669-a569a91d-c480-4622-8e20-8b18a78bd64b"
+                    },
+                    {
+                        "name": "Delete Recurring Shift Template",
+                        "id": "b634604d-1d64-4fc3-9d6b-a8ca7db045f6",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "DELETE",
+                            "header": [],
+                            "url": {
+                                "raw": "{{baseUrl}}/api/recurring-shifts/64f1a2b3c4d5e6f7g8h9i0j1",
+                                "host": [
+                                    "{{baseUrl}}"
+                                ],
+                                "path": [
+                                    "api",
+                                    "recurring-shifts",
+                                    "64f1a2b3c4d5e6f7g8h9i0j1"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "14129669-b634604d-1d64-4fc3-9d6b-a8ca7db045f6"
+                    }
+                ],
+                "id": "23d5f569-59d4-49cc-93cf-6507a71176c7",
+                "uid": "14129669-23d5f569-59d4-49cc-93cf-6507a71176c7"
+            },
+            {
+                "name": "Analytics",
+                "item": [
+                    {
+                        "name": "Get Coverage Analytics",
+                        "id": "45798c0c-597b-4593-89e8-e9420f2b7816",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "GET",
+                            "header": [],
+                            "url": {
+                                "raw": "{{baseUrl}}/api/analytics/coverage?startDate=2025-08-24&endDate=2025-08-30",
+                                "host": [
+                                    "{{baseUrl}}"
+                                ],
+                                "path": [
+                                    "api",
+                                    "analytics",
+                                    "coverage"
+                                ],
+                                "query": [
+                                    {
+                                        "key": "startDate",
+                                        "value": "2025-08-24"
+                                    },
+                                    {
+                                        "key": "endDate",
+                                        "value": "2025-08-30"
+                                    }
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "14129669-45798c0c-597b-4593-89e8-e9420f2b7816"
+                    },
+                    {
+                        "name": "Get Conflict Analytics",
+                        "id": "0011f947-d06a-4015-a483-9a03ee38fdbd",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "GET",
+                            "header": [],
+                            "url": {
+                                "raw": "{{baseUrl}}/api/analytics/conflicts?startDate=2025-08-24&endDate=2025-08-30",
+                                "host": [
+                                    "{{baseUrl}}"
+                                ],
+                                "path": [
+                                    "api",
+                                    "analytics",
+                                    "conflicts"
+                                ],
+                                "query": [
+                                    {
+                                        "key": "startDate",
+                                        "value": "2025-08-24"
+                                    },
+                                    {
+                                        "key": "endDate",
+                                        "value": "2025-08-30"
+                                    }
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "14129669-0011f947-d06a-4015-a483-9a03ee38fdbd"
+                    },
+                    {
+                        "name": "Get Workload Analytics",
+                        "id": "a19bf198-7da0-47ae-b763-b91545ec65ae",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "GET",
+                            "header": [],
+                            "url": {
+                                "raw": "{{baseUrl}}/api/analytics/workload?startDate=2024-01-01&endDate=2024-01-31",
+                                "host": [
+                                    "{{baseUrl}}"
+                                ],
+                                "path": [
+                                    "api",
+                                    "analytics",
+                                    "workload"
+                                ],
+                                "query": [
+                                    {
+                                        "key": "startDate",
+                                        "value": "2024-01-01"
+                                    },
+                                    {
+                                        "key": "endDate",
+                                        "value": "2024-01-31"
+                                    }
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "14129669-a19bf198-7da0-47ae-b763-b91545ec65ae"
+                    },
+                    {
+                        "name": "Get Utilization Summary",
+                        "id": "8edb2080-129d-41cc-a65c-2be5d33103ad",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "GET",
+                            "header": [],
+                            "url": {
+                                "raw": "{{baseUrl}}/api/analytics/utilization?startDate=2024-01-01&endDate=2024-01-31",
+                                "host": [
+                                    "{{baseUrl}}"
+                                ],
+                                "path": [
+                                    "api",
+                                    "analytics",
+                                    "utilization"
+                                ],
+                                "query": [
+                                    {
+                                        "key": "startDate",
+                                        "value": "2024-01-01"
+                                    },
+                                    {
+                                        "key": "endDate",
+                                        "value": "2024-01-31"
+                                    }
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "14129669-8edb2080-129d-41cc-a65c-2be5d33103ad"
+                    }
+                ],
+                "id": "c28f148c-6638-4981-b5bb-134197324518",
+                "uid": "14129669-c28f148c-6638-4981-b5bb-134197324518"
+            },
+            {
+                "name": "Health Check",
+                "item": [
+                    {
+                        "name": "Server Health",
+                        "id": "61210b85-0cfe-40a2-b32c-e621f6995169",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "GET",
+                            "header": [],
+                            "url": {
+                                "raw": "{{baseUrl}}/health",
+                                "host": [
+                                    "{{baseUrl}}"
+                                ],
+                                "path": [
+                                    "health"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "14129669-61210b85-0cfe-40a2-b32c-e621f6995169"
+                    }
+                ],
+                "id": "e766687a-4012-43bd-bcef-be914bd06180",
+                "uid": "14129669-e766687a-4012-43bd-bcef-be914bd06180"
+            }
+        ],
+        "auth": {
+            "type": "bearer",
+            "bearer": [
+                {
+                    "key": "token",
+                    "value": "{{token}}",
+                    "type": "string"
+                }
+            ]
+        },
+        "event": [
+            {
+                "listen": "prerequest",
+                "script": {
+                    "id": "9fcb7f7d-cb38-4bbc-b215-6508c6c2fc10",
+                    "type": "text/javascript",
+                    "packages": {},
+                    "exec": [
+                        ""
+                    ]
+                }
+            },
+            {
+                "listen": "test",
+                "script": {
+                    "id": "f11128e1-efdf-42c9-9afb-82d3ec7d9a6b",
+                    "type": "text/javascript",
+                    "packages": {},
+                    "exec": [
+                        ""
+                    ]
+                }
+            }
+        ],
+        "variable": [
+            {
+                "key": "baseUrl",
+                "value": "http://localhost:3000"
+            },
+            {
+                "key": "token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbXBsb3llZUlkIjoiNjhhYjNiMWJmMGI4YTBjMzRiY2EzOTc2IiwiaWF0IjoxNzU2MDUyNzQ3LCJleHAiOjE3NTYxMzkxNDd9.Wo6uZ0GmH-Te45SoVh1tBsyXAC7TYj52B2m_FXbkAak"
+            }
+        ]
+    }
+}
